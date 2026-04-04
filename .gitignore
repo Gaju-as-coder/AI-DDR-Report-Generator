@@ -1,0 +1,18 @@
+# ===== FRONTEND =====
+frontend/node_modules/
+frontend/dist/
+
+# ===== BACKEND =====
+backend/__pycache__/
+*.pyc
+
+# ===== FILE STORAGE =====
+backend/uploads/
+backend/outputs/
+
+# ===== ENV =====
+.env
+
+# ===== SYSTEM =====
+.DS_Store
+Thumbs.db
