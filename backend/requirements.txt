@@ -2,4 +2,5 @@ fastapi
 uvicorn
 pymupdf
 python-multipart
-google-generativeai
+python-docx
+google-genai
