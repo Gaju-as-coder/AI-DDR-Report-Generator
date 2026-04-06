@@ -10,7 +10,7 @@ export function Footer() {
           <span>• AI-Powered • Portfolio Project</span>
         </div>
         <a
-          href="https://github.com"
+          href="https://github.com/Gaju-as-coder/AI-DDR-Report-Generator"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 hover:text-foreground transition-colors"
