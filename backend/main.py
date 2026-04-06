@@ -190,7 +190,7 @@ async def generate_report(
         return {
             "message": "Report Generated Successfully",
             "pdf_file": f"{BASE_URL}/outputs/{pdf_filename}",
-            "word_file": f"outputs/{word_filename}",
+            "word_file": f"{BASE_URL}/outputs/{word_filename}",
             "data": ddr_data
         }
 
