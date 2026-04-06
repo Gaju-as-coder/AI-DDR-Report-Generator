@@ -64,6 +64,7 @@ export function UploadCard() {
 
   //   toast.success("Report generated successfully!");
   // };
+const API_URL = "https://ai-ddr-report-generator-05t8.onrender.com";
 
   const handleGenerate = async () => {
   if (!canGenerate) return;
@@ -76,12 +77,22 @@ export function UploadCard() {
     formData.append("inspection", inspectionFile!);
     formData.append("thermal", thermalFile!);
 
-    const response = await fetch("http://127.0.0.1:8000/generate-report", {
+    const response = await fetch(`${API_URL}/generate-report`, {
       method: "POST",
       body: formData,
+      
     });
 
+    if (!response.ok) {
+      throw new Error("Server error");
+    }
+
+
     const data = await response.json();
+
+    if (!data.data) {
+      throw new Error("Invalid response");
+    }
 
     // Set report from backend
     setReport({
@@ -113,21 +124,33 @@ export function UploadCard() {
   //   //console.log("Downloading PDF...");
   // };
 
+//   const handleDownloadPDF = () => {
+//   if (!report?.pdf) return;
+//   window.open(`${API_URL}/${report.pdf}`, "_blank");
+// };
+
   const handleDownloadPDF = () => {
   if (!report?.pdf) return;
-  window.open(`http://127.0.0.1:8000/${report.pdf}`, "_blank");
+  window.open(report.pdf, "_blank");
 };
+
+
 
   // const handleDownloadWord = () => {
   //   toast.success("Word document download started");
   //   // Mock download logic
   //   console.log("Downloading Word...");
   // };
+//   const handleDownloadWord = () => {
+//   if (!report?.word) return;
+//   window.open(`${API_URL}/${report.word}`, "_blank");
+// };
 
-  const handleDownloadWord = () => {
+   const handleDownloadWord = () => {
   if (!report?.word) return;
-  window.open(`http://127.0.0.1:8000/${report.word}`, "_blank");
+  window.open(report.word, "_blank");
 };
+  
 
   const handleReset = () => {
     setInspectionFile(null);
