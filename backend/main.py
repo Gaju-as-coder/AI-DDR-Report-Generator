@@ -107,7 +107,7 @@ app = FastAPI()
 
 # ===================== PATH SETUP =====================
 
-BASE_URL = "https://ai-ddr-report-generator-05t8.onrender.com/"  #base URL for production
+BASE_URL = "https://ai-ddr-report-generator-05t8.onrender.com"  #base URL for production
 # BASE_URL = "http://localhost:8000/" #base URL for local testing
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
