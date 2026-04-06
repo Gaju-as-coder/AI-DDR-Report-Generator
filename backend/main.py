@@ -106,6 +106,10 @@ app = FastAPI()
 
 
 # ===================== PATH SETUP =====================
+
+BASE_URL = "https://ai-ddr-report-generator-05t8.onrender.com/"  #base URL for production
+# BASE_URL = "http://localhost:8000/" #base URL for local testing
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 UPLOAD_DIR = os.path.join(BASE_DIR, "uploads")
@@ -185,7 +189,7 @@ async def generate_report(
         # ================= RESPONSE =================
         return {
             "message": "Report Generated Successfully",
-            "pdf_file": f"outputs/{pdf_filename}",
+            "pdf_file": f"{BASE_URL}/outputs/{pdf_filename}",
             "word_file": f"outputs/{word_filename}",
             "data": ddr_data
         }
