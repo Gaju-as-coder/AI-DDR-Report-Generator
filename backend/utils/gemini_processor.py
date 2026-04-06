@@ -145,8 +145,9 @@
 from google import genai
 import json
 import re
+import os
 
-client = genai.Client(api_key="GEMINI_API_KEY") # Replace with your actual API key
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY")) # Replace with your actual API key
 
 def clean_json(text):
     try:
